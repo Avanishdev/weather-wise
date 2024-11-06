@@ -28,7 +28,7 @@ function WeatherDisplay({ weatherData, forecastData, favorites, setFavorites, un
                 <button onClick={() => handleAddFavorite(weatherData)}>Add to Favorites</button>
                 <div className='add-favorite-btn' onClick={() => handleAddFavorite(weatherData)}>+</div>
             </div>
-            <p>{weatherData.main.temp}°</p>
+            <p>{weatherData.main.temp}°{unit === 'metric' ? 'C' : 'F'}</p>
             <p>{weatherData.weather[0].description}</p>
             <div className="forecast">
                 {filteredForcastData?.map((day, index) => (
